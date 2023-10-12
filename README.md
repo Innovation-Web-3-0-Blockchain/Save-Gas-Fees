@@ -8,10 +8,11 @@ Welcome to the `Saving-Gas-Fees` repository. This is a project aimed at helping 
 - [Why Gas Fees Matter?](#why-gas-fees-matter)
 - [Verification and Security](#verification-and-security)
 - [Commented Code](#commented-code)
+- [Getting Started](#getting-started)
 - [Features](#features)
+  - [Caching](#caching)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 - [Future Updates](#future-updates)
 
 
@@ -45,24 +46,35 @@ Each modification to this project undergoes a meticulous verification process an
 
 To initiate your engagement with the `SaveGasFees` project, adhere to these instructions:
 
-1. Ensure you have `node.js` and `npm` installed in your environment.
+1. Clone this repository to your local machine.
 
-2. Clone this repository to your local machine.
+   ```bash
+   git clone https://github.com/CyberAnon1010101/Blockchain-SaveGasFees.git
+   ```
+
+2. Ensure you have `node.js` and `npm` installed in your environment.
 
 3. Install the necessary dependencies by running the following command in your terminal:
 
    ```bash
    npm install
    ```
+
 ## Features
 
-- **Smart Contract Optimization**: SaveGasFees includes a set of smart contracts designed to optimize gas usage when executing common operations.
+### Caching
 
-- **Gas Fee Estimation**: Our tool provides accurate gas fee estimations, helping users make informed decisions before sending transactions.
+The primary purposes of caching in smart contracts are:
 
-- **Gas Fee Alerts**: Set up alerts to notify you when gas fees are low, so you can execute your transactions at the right time.
+- Gas Efficiency
+- Speed & Responsiveness
+- Data Integrity & Consistency
+- Minimizing Blockchain Bloat
+- Scalability
 
-- **User-Friendly Interface**: SaveGasFees offers an intuitive user interface that simplifies the process of gas fee optimization.
+For a detailed explanation of the various methods to reduce gas fees, we encourage you to refer to our [Saving Gas Fees Project Documentations](./Saving-Gas-Fees-Documentations/METHODS.md).
+
+**Wil be updated soon**
 
 ## Contributing
 
@@ -72,10 +84,6 @@ Contributions to this project are welcome and encouraged. If you identify any bu
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
-
-- Special thanks to the Ethereum community for their continuous support and feedback.
-
 ## Future Updates
 
-**will be updated soon**
+As the ecosystem continues to expand, our dedication to updating this project remains unwavering. Our aim is to ensure that gas fee optimization becomes increasingly accessible and efficient for developers and Ethereum users. We are enthusiastic about the prospects of gas fee optimization in the future and will continue to contribute to making blockchain technology more economical.
