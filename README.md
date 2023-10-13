@@ -11,9 +11,11 @@ Welcome to the `Saving-Gas-Fees` repository. This is a project aimed at helping 
 - [Getting Started](#getting-started)
 - [Features](#features)
   - [Caching](#caching)
+  - [Events](#events)
 - [Contributing](#contributing)
 - [License](#license)
 - [Future Updates](#future-updates)
+- [Donations](#donation)
 
 
 ## What Are Gas Fees?
@@ -44,12 +46,12 @@ Each modification to this project undergoes a meticulous verification process an
 
 ## Getting Started
 
-To initiate your engagement with the `SaveGasFees` project, adhere to these instructions:
+To initiate your engagement with our `Save-Gas-Fees` project, adhere to these instructions:
 
 1. Clone this repository to your local machine.
 
    ```bash
-   git clone https://github.com/CyberAnon1010101/Blockchain-SaveGasFees.git
+   git clone https://github.com/Innovation-Web-3-0-Blockchain/Save-Gas-Fees.git
    ```
 
 2. Ensure you have `node.js` and `npm` installed in your environment.
@@ -72,9 +74,15 @@ The primary purposes of caching in smart contracts are:
 - Minimizing Blockchain Bloat
 - Scalability
 
-For a detailed explanation of the various methods to reduce gas fees, we encourage you to refer to our [Saving Gas Fees Project Documentations](./Saving-Gas-Fees-Documentations/METHODS.md).
+### Events 
 
-**Wil be updated soon**
+Emitting an event is a way to log information in the blockchain, and it is important to understand that events are not meant to be used for on-chain logic or data storage. Here's how events and gas fees are related:
+
+- Low Gas Cost
+- Off-Chain Data
+- Not for On-Chain Logic
+
+For a detailed explanation of the various methods to reduce gas fees, we encourage you to refer to our [Saving Gas Fees Project Documentations](./Saving-Gas-Fees-Documentations/METHODS.md).
 
 ## Contributing
 
@@ -87,3 +95,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Future Updates
 
 As the ecosystem continues to expand, our dedication to updating this project remains unwavering. Our aim is to ensure that gas fee optimization becomes increasingly accessible and efficient for developers and Ethereum users. We are enthusiastic about the prospects of gas fee optimization in the future and will continue to contribute to making blockchain technology more economical.
+
+## Donations
+
+### Our Values
+
+We do not use any form of social media or engage in marketing activities. Our principles are rooted in open source and privacy, and we do not receive compensation for our contributions to GitHub. Furthermore, we do not endorse or have affiliations with any other projects.
+
+### Supporting Us
+
+While we remain committed to providing valuable resources, any donations are greatly appreciated. Your support will help us offset the time and effort we invest in these projects to facilitate access to accessible information.
+
+### Donation Options
+
+We welcome contributions in Bitcoin and Monero, and you can send contributions by scanning one of the addresses in the QR codes at the following link: [Donate to Innovation Web 3.0](https://innovationweb3.github.io/)
+
+Thank you for your support and for being part of our community!

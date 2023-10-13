@@ -2,6 +2,9 @@
 
 - [Caching](#caching)
 - [Caching Test](#caching-test)
+- [Events](#events)
+- [Events Test](#events-test)
+- [Dependencies](#dependencies)
 
 ---
 
@@ -14,7 +17,7 @@ Caching refers to the practice of storing and reusing previously computed or fet
 1. Function with a Higher Gas Consumption
 
 ```solidity
-// Function to calculate the square of a number without caching
+// Code snippet with a higher gas consumption
 function sqrNumUncached(uint _index) external {
     uint sqr;
     
@@ -29,10 +32,10 @@ function sqrNumUncached(uint _index) external {
 2. Function with a Lower Gas Consumption
 
 ```solidity
-// Function to calculate the square of a number with caching
+// Code snippet with a lower gas consumption
 function sqrNumCached(uint _index) external {
     uint sqr;
-    uint num = nums[_index]; // Cache the value of 'nums[_index]'
+    uint num = nums[_index];
 
     for (uint i = 1; i <= num; i++) {
         sqr += num;
@@ -54,6 +57,110 @@ When calling these functions, you will observe that the uncached operation uses 
 
 ---
 
-***Will be updated soon***
+## Events
+
+Events primarily serve the crucial role of enhancing transparency within smart contracts and notifying off-chain entities about important on-chain events. By emitting events, smart contracts can communicate actions, state changes, and significant occurrences to external applications and users. This transparency ensures that relevant parties are aware of critical updates and historical interactions Moreover, events are designed to be cost-effective in terms of gas fees, making them an efficient mechanism for broadcasting information to the broader Ethereum network without incurring substantial computational costs.
+
+***NoEventsMarketplace.sol***
+
+1. Functions with a Higher Gas Consumption
+
+```solidity
+// Code snippet with higher gas consumption
+function makeItem(address _nftContract, uint _tokenId, uint _price) external {
+    itemCount++; 
+
+    items[itemCount] = Item (
+        itemCount,
+        _nftContract,
+        _tokenId,
+        _price,
+        payable(msg.sender),
+        block.timestamp,
+        address(0),
+        0,
+        false
+    );
+}
+
+function buyItem(uint _itemId) external payable {
+    Item storage item = items[_itemId]; 
+
+    item.sold = true;
+    item.buyer = msg.sender; 
+    item.timestampSold = block.timestamp; 
+}
+
+```
+
+***MarketplaceWithEvents.sol***
+
+
+2. Functions with a Lower Gas Consumption
+
+```solidity
+// Code snippet with lower gas consumption
+event Offered (
+    uint itemId,             
+    address indexed nft,     
+    uint tokenId,            
+    uint price,              
+    address indexed seller,  
+    uint timestamp           
+);
+
+event Bought(
+    uint itemId,             
+    address indexed nft,     
+    uint tokenId,            
+    uint price,              
+    address indexed seller,  
+    address indexed buyer,   
+    uint timestamp           
+);
+
+// Code for the function goes here //
+
+// Then emit the event:
+emit Offered(
+    itemCount,
+    address(_nftContract),
+    _tokenId,
+    _price,
+    msg.sender,
+    block.timestamp
+);
+
+// Code for the function goes here //
+
+// Then emit the event:
+emit Bought(
+    _itemId,
+    address(item.nftContract),
+    item.tokenId,
+    item.price,
+    item.seller,
+    msg.sender,
+    block.timestamp
+);
+```
+
+When calling these functions, it becomes evident that the contract employing the event operation results in reduced gas expenses compared to the one without events. This is because only one field in the struct needs to be updated on the blockchain, as opposed to the three fields that require modification in the alternative case. 
+
+---
+
+## Events Test
+
+   ```bash
+   npx hardhat test test/Events.js
+   ```
+
+---
+
+## Dependencies
+
+In this project, we've included the "hardhat-gas-reporter" dependency. This is a valuable tool for anyone working on smart contracts, as it allows you to monitor gas consumption directly in your terminal. It provides insights into gas usage per method created, making it easier to assess the deployment cost of the contract.
+
+It's worth noting that many newer versions of the Solidity compiler come with built-in gas optimization features. This means that experienced Solidity developers may not need to employ as many optimization techniques to reduce gas consumption. However, it remains important to understand these techniques to gain a deeper insight into how the Ethereum Virtual Machine (EVM) operates. This knowledge can help you make more informed decisions and better manage gas costs when working with smart contracts.
 
 ---
